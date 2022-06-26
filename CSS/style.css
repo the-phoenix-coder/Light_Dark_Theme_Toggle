@@ -1,0 +1,128 @@
+:root {
+	--dark: #333;
+	--light: rgb(204, 55, 1);
+}
+
+body {
+	--dark-sec: orangered;
+	height: 100vh;
+	margin: 0;
+	background-color: white;
+	transition: .4s;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	-webkit-transition: .4s;
+	-moz-transition: .4s;
+	-ms-transition: .4s;
+	-o-transition: .4s;
+	overflow: hidden
+}
+.dark {
+	--dark-sec: #D0D066;
+	color: white;
+	background-color: var(--dark);
+}
+
+.container {
+	text-align: center;
+}
+
+body button {
+	background-color: var(--dark-sec);
+	color: white;
+	font-size: 1.5rem;
+
+	border: none;
+	outline: none;
+	user-select: none;
+	cursor: pointer;
+	padding: .5rem 1.5rem;
+
+	border-radius: .5rem;
+	-webkit-border-radius: .5rem;
+	-moz-border-radius: .5rem;
+	-ms-border-radius: .5rem;
+	-o-border-radius: .5rem;
+	
+	transition:  .5s;
+	-webkit-transition:  .5s;
+	-moz-transition:  .5s;
+	-ms-transition:  .5s;
+	-o-transition:  .5s;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+.dark button {
+	color: var(--dark);
+	background-color: var(--dark-sec);
+}
+button:hover, button:focus {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+}
+
+.swap {
+	--rotation: 0;
+	position: absolute;
+	top: 0;
+	height: 200vmin;
+	pointer-events: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: rotate(calc(var(--rotation)*1deg));
+	-webkit-transform: rotate(calc(var(--rotation)*1deg));
+	-moz-transform: rotate(calc(var(--rotation)*1deg));
+	-ms-transform: rotate(calc(var(--rotation)*1deg));
+	-o-transform: rotate(calc(var(--rotation)*1deg));
+	transition: transform .4s;
+	-webkit-transition: transform .4s;
+	-moz-transition: transform .4s;
+	-ms-transition: transform .4s;
+	-o-transition: transform .4s;
+}
+.fa-moon,
+.fa-sun {
+	position: absolute;
+	transition: obpacity, fill, .4s;
+	-webkit-transition: obpacity, fill, .4s;
+	-moz-transition: obpacity, fill, .4s;
+	-ms-transition: obpacity, fill, .4s;
+	-o-transition: obpacity, fill, .4s;
+	fill: var(--dark-sec);
+}
+
+.fa-sun {
+	top: 5%;
+	opacity: 1;
+}
+.dark .fa-sun {
+	opacity: 0;
+}
+
+
+.fa-moon {
+	bottom: 5%;
+	opacity: 0;
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+}
+.dark .fa-moon {
+	opacity: 1;
+}
